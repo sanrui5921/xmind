@@ -3,3 +3,5 @@ tree.dot
 tree.png
 *.swp
 *-checkpoint.ipynb
+code/leetcode/leetcode_java/.mvn
+code/leetcode/leetcode_python/.idea
