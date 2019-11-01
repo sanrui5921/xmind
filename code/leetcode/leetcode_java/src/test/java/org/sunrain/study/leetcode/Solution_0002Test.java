@@ -1,4 +1,4 @@
-package org.sunrain.study.leetcode_java;
+package org.sunrain.study.leetcode;
 
 import org.junit.Assert;
 import org.junit.Before;

@@ -1,4 +1,4 @@
-package org.sunrain.study.leetcode_java;
+package org.sunrain.study.leetcode;
 
 /**
  * 难度: 简单
