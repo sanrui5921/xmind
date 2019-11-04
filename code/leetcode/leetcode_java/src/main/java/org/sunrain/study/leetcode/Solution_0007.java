@@ -49,9 +49,8 @@ public class Solution_0007 {
         return (int) -Math.pow(2, 31);
     }
 
-
-    public static void main(String[] args) {
-        System.out.println(new Solution_0007().max());
-        System.out.println(new Solution_0007().min());
-    }
+//    public static void main(String[] args) {
+//        System.out.println(new Solution_0007().max());
+//        System.out.println(new Solution_0007().min());
+//    }
 }

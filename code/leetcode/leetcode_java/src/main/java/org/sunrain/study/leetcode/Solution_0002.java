@@ -58,14 +58,3 @@ public class Solution_0002 {
 //        System.out.println(ToStringBuilder.reflectionToString(l2));
 //    }
 }
-
-class ListNode {
-
-    int val;
-
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
-    }
-}
