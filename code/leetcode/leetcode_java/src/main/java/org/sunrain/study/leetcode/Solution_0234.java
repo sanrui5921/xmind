@@ -17,38 +17,37 @@ package org.sunrain.study.leetcode;
 public class Solution_0234 {
 
     public boolean isPalindrome(ListNode head) {
-        return false;
-//        ListNode temp = head;
-//        int number = 0;
-//        for (; temp != null; temp = temp.next) {
-//            number++;
-//        }
-//
-//        if (number == 1) {
-//            return true;
-//        }
-//
-//        ListNode newHead = reverseList(head, number / 2 - 1);
-//
-//        newHead.display();
-//
-//        temp = newHead;
-//        int times = 0;
-//        for (; times < number / 2; times++) {
-//            temp = temp.next;
-//        }
-//
-//        System.out.println(temp.val);
-//        ListNode tempNext = temp.next;
-//        temp = newHead;
-//
-//        for (; times < number; times++) {
-//            if (temp.val != tempNext.val) {
-//                return false;
-//            }
-//        }
-//
-//        return true;
+
+        ListNode temp = head;
+
+        int number = 0;
+        for (; temp != null; temp = temp.next) {
+            number++;
+        }
+
+        ListNode newHead = reverseList(head, number / 2 - 1);
+
+        temp = newHead;
+
+        int times = 0;
+        for (; times < number / 2; times++) {
+            temp = temp.next;
+        }
+
+        if (number % 2 != 0 && temp.next != null) {
+            temp = temp.next;
+        }
+
+        ListNode tempNext = temp.next;
+        temp = newHead;
+
+        for (; times < number; times++) {
+            if (temp.val != tempNext.val) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public ListNode reverseList(ListNode head, int number) {
