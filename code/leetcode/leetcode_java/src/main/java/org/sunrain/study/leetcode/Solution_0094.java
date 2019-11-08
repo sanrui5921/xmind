@@ -3,9 +3,10 @@ package org.sunrain.study.leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
- * 给定一个二叉树，返回它的中序 遍历。
+ * 给定一个二叉树，返回它的中序遍历。
  * <p>
  * 示例:
  * <p>
@@ -26,15 +27,9 @@ import java.util.List;
 public class Solution_0094 {
 
     public List<Integer> inorderTraversal(TreeNode root) {
-
-        if (root == null) {
-            return null;
-        }
-
         List<Integer> list = new ArrayList<>();
-
-
-
+        Stack stack = new Stack();
+        TreeNode current = root;
         return list;
     }
 }
