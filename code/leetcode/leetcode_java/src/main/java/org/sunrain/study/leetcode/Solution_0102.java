@@ -1,5 +1,6 @@
 package org.sunrain.study.leetcode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,7 +28,34 @@ import java.util.List;
  */
 
 public class Solution_0102 {
+
     public List<List<Integer>> levelOrder(TreeNode root) {
-        return null;
+
+        if (root == null) {
+            return new ArrayList<>();
+        }
+
+        List<List<Integer>> list = new ArrayList<>();
+
+        add(list, root, 0);
+
+        return list;
+    }
+
+    public void add(List<List<Integer>> lists, TreeNode node, int level) {
+
+        if (lists.size() <= level) {
+            List<Integer> list = new ArrayList<>();
+            lists.add(level, list);
+        }
+
+        lists.get(level).add(node.val);
+        if (node.left != null) {
+            add(lists, node.left, level + 1);
+        }
+
+        if (node.right != null) {
+            add(lists, node.right, level + 1);
+        }
     }
 }

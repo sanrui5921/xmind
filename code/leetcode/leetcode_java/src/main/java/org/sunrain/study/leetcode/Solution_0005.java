@@ -20,7 +20,6 @@ package org.sunrain.study.leetcode;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class Solution_0005 {
-
     public String longestPalindrome(String s) {
         return null;
     }

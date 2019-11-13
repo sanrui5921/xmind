@@ -26,7 +26,44 @@ package org.sunrain.study.leetcode;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class Solution_0061 {
+
     public ListNode rotateRight(ListNode head, int k) {
-        return null;
+        if (head == null || head.next == null) {
+            return head;
+        }
+        int total = 0;
+        for (ListNode current = head; current != null; current = current.next) {
+            total++;
+        }
+
+        int reminder = k % total;
+
+        if (reminder == 0) {
+            return head;
+        }
+
+        ListNode firstEnd = null;
+
+        ListNode tail;
+
+        int i = 0;
+
+        ListNode current = head;
+
+        for (current = head; i < total - 1; current = current.next, i++) {
+            if (i == total - reminder - 1) {
+                firstEnd = current;
+            }
+        }
+
+        tail = current;
+
+        tail.next = head;
+
+        head = firstEnd.next;
+
+        firstEnd.next = null;
+
+        return head;
     }
 }

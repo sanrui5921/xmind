@@ -3,6 +3,7 @@ package org.sunrain.study.utils;
 import org.sunrain.study.leetcode.ListNode;
 
 public class ListNodeBuilder {
+
     public static ListNode build(String str) {
         if (str == null) {
             return null;
@@ -15,6 +16,28 @@ public class ListNodeBuilder {
             temp.next = new ListNode(Integer.parseInt(arrays[i]));
             temp = temp.next;
         }
+        return head;
+    }
+
+    public static ListNode build(int[] array) {
+        if (array == null || array.length == 0) {
+            return null;
+        }
+
+        ListNode head = null;
+
+        ListNode current = null;
+
+        for (int number : array) {
+            if (current == null) {
+                head = new ListNode(number);
+                current = head;
+                continue;
+            }
+            current.next = new ListNode(number);
+            current = current.next;
+        }
+
         return head;
     }
 }
