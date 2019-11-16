@@ -32,6 +32,49 @@ package org.sunrain.study.leetcode;
 public class Solution_0091 {
 
     public int numDecodings(String s) {
-        return 0;
+
+        if (s == null) {
+            return 0;
+        }
+
+        int length = s.length();
+
+        int[] array = new int[length];
+
+        char[] chars = s.toCharArray();
+
+        for (int i = 0; i < length; i++) {
+
+            int charI = Integer.parseInt(String.valueOf(chars[i]));
+
+            int charI_1 = i - 1 < 0 ? -1 : Integer.parseInt(String.valueOf(chars[i - 1]));
+
+            int arrayI_1 = i - 1 < 0 ? 1 : array[i - 1];
+
+            int arrayI_2 = i - 2 < 0 ? 1 : array[i - 2];
+
+            if ((charI == 0 && (charI_1 <= 0 || charI_1 > 2))) {
+                return 0;
+            }
+
+            if (charI_1 == -1) {
+                array[i] = 1;
+                continue;
+            }
+
+            if ((charI_1 == 0 && charI > 0) || (charI_1 == 2 && charI > 6) || (charI_1 > 2 && charI > 0)) {
+                array[i] = arrayI_1;
+                continue;
+            }
+
+            if (charI == 0 && (charI_1 == 1 || charI_1 == 2)) {
+                array[i] = arrayI_2;
+                continue;
+            }
+
+            array[i] = arrayI_1 + 1;
+
+        }
+        return array[s.length() - 1];
     }
 }
