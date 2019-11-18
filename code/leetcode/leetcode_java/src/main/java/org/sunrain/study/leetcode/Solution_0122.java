@@ -34,32 +34,24 @@ public class Solution_0122 {
 
     public int maxProfit(int[] prices) {
 
-        int max = 0;
+        if (prices == null || prices.length == 0 || prices.length == 1) {
+            return 0;
+        }
 
+        int[] array = new int[prices.length - 1];
 
+        for (int i = 0; i < prices.length - 1; i++) {
+            array[i] = prices[i + 1] - prices[i];
+        }
 
-        return max;
+        int total = 0;
+
+        for (int j = 0; j < prices.length - 1; j++) {
+            if (array[j] > 0) {
+                total += array[j];
+            }
+        }
+
+        return total;
     }
-
-    /**
-     * int[][] gaps = new int[prices.length - 1][prices.length - 1];
-
-     for (int i = 1; i < prices.length; i++) {
-     for (int j = 1; j < prices.length; j++) {
-     gaps[i - 1][j - 1] = j <= i ? 0 : prices[j - 1] - prices[i - 1] <= 0 ? 0 : prices[j - 1] - prices[i - 1];
-     }
-     }
-
-     for (int i = 0; i < gaps.length; i++) {
-     for (int j = 0; j < gaps.length; j++) {
-     System.out.print(gaps[i][j] + " ");
-     }
-     System.out.println();
-     }
-
-     int[][] result = new int[gaps.length][gaps.length];
-
-     * */
-
-
 }

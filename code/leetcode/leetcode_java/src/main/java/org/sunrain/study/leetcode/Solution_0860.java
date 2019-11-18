@@ -1,7 +1,6 @@
 package org.sunrain.study.leetcode;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
 /**
  * Created by qichao on 2019/11/16.
@@ -56,10 +55,45 @@ public class Solution_0860 {
 
     public boolean lemonadeChange(int[] bills) {
 
-        List<Integer> leftList = new ArrayList<>();
+        HashMap<Integer, Integer> charges = new HashMap<>();
 
-        for (int indexR = 0, indexLeft = leftList.size(); indexR < bills.length && indexLeft >= 0; ) {
-            int number = bills[indexR] - 5;
+        charges.put(5, 0);
+
+        charges.put(10, 0);
+
+        for (int indexR = 0; indexR < bills.length; indexR++) {
+            if (bills[indexR] == 5) {
+                int total = charges.get(5) == null ? 0 : charges.get(5);
+                charges.put(5, total + 1);
+                continue;
+            }
+
+            if (bills[indexR] == 10) {
+                if (charges.get(5) > 0) {
+                    charges.put(5, charges.get(5) - 1);
+                    charges.put(10, charges.get(10) + 1);
+                } else {
+                    return false;
+                }
+                continue;
+            }
+
+            if (bills[indexR] == 20) {
+                if (charges.get(10) > 0) {
+                    if (charges.get(5) > 0) {
+                        charges.put(5, charges.get(5) - 1);
+                        charges.put(10, charges.get(10) - 1);
+                    } else {
+                        return false;
+                    }
+                } else {
+                    if (charges.get(5) >= 3) {
+                        charges.put(5, charges.get(5) - 3);
+                    } else {
+                        return false;
+                    }
+                }
+            }
         }
 
         return true;

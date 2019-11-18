@@ -41,7 +41,7 @@ public class Solution_1019 {
 
         int index = 0;
 
-        
+
 
         return null;
     }
