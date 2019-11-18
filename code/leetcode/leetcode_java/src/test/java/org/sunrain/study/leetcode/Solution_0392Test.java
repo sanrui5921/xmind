@@ -24,4 +24,10 @@ public class Solution_0392Test {
         String s = "axc", t = "ahbgdc";
         Assert.assertEquals(false, solution.isSubsequence(s, t));
     }
+
+    @Test
+    public void isSubsequenceTest3() {
+        String s = "acb", t = "ahbgdc";
+        Assert.assertEquals(false, solution.isSubsequence(s, t));
+    }
 }

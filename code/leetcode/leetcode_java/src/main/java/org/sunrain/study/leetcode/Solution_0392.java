@@ -26,12 +26,28 @@ package org.sunrain.study.leetcode;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class Solution_0392 {
+
     public boolean isSubsequence(String s, String t) {
 
         if (s == null || t == null) {
             return false;
         }
+        int i = 0;
+        int indexJ = 0;
+        for (; i < s.length(); i++) {
+            boolean innerExist = false;
+            for (; indexJ < t.length(); indexJ++) {
+                if (s.charAt(i) == t.charAt(indexJ)) {
+                    innerExist = true;
+                    indexJ++;
+                    break;
+                }
+            }
+            if (!innerExist) {
+                break;
+            }
+        }
 
-        return false;
+        return i == s.length();
     }
 }
