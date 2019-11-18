@@ -1,5 +1,8 @@
 package org.sunrain.study.leetcode;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 /**
  * 在二维空间中有许多球形的气球。对于每个气球，提供的输入是水平方向上，气球直径的开始和结束坐标。
  * 由于它是水平的，所以y坐标并不重要，因此只要知道开始和结束的x坐标就足够了。开始坐标总是小于结束坐标。平面内最多存在104个气球。
@@ -24,7 +27,26 @@ package org.sunrain.study.leetcode;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class Solution_0452 {
+
     public int findMinArrowShots(int[][] points) {
-        return 0;
+
+        if (points == null || points.length == 0) {
+            return 0;
+        }
+
+        Arrays.sort(points, Comparator.comparingInt(o -> o[1]));
+
+        int total = 1;
+
+        int targetY = points[0][1];
+
+        for (int i = 1; i < points.length; i++) {
+            if (points[i][0] > targetY) {
+                total++;
+                targetY = points[i][1];
+            }
+        }
+
+        return total;
     }
 }
