@@ -23,6 +23,6 @@ public class Solution_0315Test {
     public void test1() {
         int[] nums = {5, 2, 6, 1};
         List<Integer> result = solution.countSmaller(nums);
-        Assert.assertEquals("[2,1,1,0]]", ListUtils.show(result));
+        Assert.assertEquals("[2,1,1,0]", ListUtils.show(result));
     }
 }

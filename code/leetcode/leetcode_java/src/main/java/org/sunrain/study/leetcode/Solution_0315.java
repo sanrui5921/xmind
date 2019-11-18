@@ -24,17 +24,35 @@ import java.util.List;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class Solution_0315 {
+
     public List<Integer> countSmaller(int[] nums) {
         if (nums == null || nums.length == 0) {
             return new ArrayList<>();
         }
 
-        int[][] matrix = new int[nums.length][2];
+        List<Integer> results = new ArrayList<>(nums.length);
 
-        for (int i = 0; i < matrix.length; i++) {
-            matrix[i][0] = nums[i];
+        return results;
+    }
+
+    //超出时间限制
+    public List<Integer> countSmaller1(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return new ArrayList<>();
         }
 
-        return null;
+        List<Integer> results = new ArrayList<>(nums.length);
+
+        for (int i = 0; i < nums.length; i++) {
+            int total = 0;
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[j] < nums[i]) {
+                    total++;
+                }
+            }
+            results.add(total);
+        }
+
+        return results;
     }
 }
