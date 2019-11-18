@@ -20,11 +20,6 @@ public class Solution_0086Test {
         //1->2->2->4->3->5
         ListNode node = ListNodeBuilder.build(s);
         ListNode newNode = solution.partition(node, 3);
-        Assert.assertEquals(1, newNode.val);
-        Assert.assertEquals(2, newNode.next.val);
-        Assert.assertEquals(2, newNode.next.next.val);
-        Assert.assertEquals(4, newNode.next.next.next.val);
-        Assert.assertEquals(3, newNode.next.next.next.next.val);
-        Assert.assertEquals(5, newNode.next.next.next.next.next.val);
+        Assert.assertEquals("1->2->2->4->3->5", newNode.show());
     }
 }
