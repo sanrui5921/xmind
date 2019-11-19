@@ -1,9 +1,7 @@
 package org.sunrain.study.leetcode;
 
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
 
 /**
  * 给定一个二叉树，返回它的中序遍历。
@@ -27,9 +25,6 @@ import java.util.Stack;
 public class Solution_0094 {
 
     public List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> list = new ArrayList<>();
-        Stack stack = new Stack();
-        TreeNode current = root;
-        return list;
+        return null;
     }
 }

@@ -2,7 +2,7 @@ package org.sunrain.study.utils;
 
 public class ArrayUtils {
 
-    public String show(int[] array) {
+    public static String show(int[] array) {
         if (array == null) {
             return null;
         }

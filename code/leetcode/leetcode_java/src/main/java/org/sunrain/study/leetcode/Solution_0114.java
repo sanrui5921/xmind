@@ -1,7 +1,5 @@
 package org.sunrain.study.leetcode;
 
-import java.util.Stack;
-
 /**
  * 给定一个二叉树，原地将它展开为链表。
  * <p>
@@ -33,9 +31,6 @@ import java.util.Stack;
 public class Solution_0114 {
 
     public void flatten(TreeNode root) {
-
-        Stack stack = new Stack();
-
 
 
     }
