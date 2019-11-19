@@ -1,5 +1,7 @@
 package org.sunrain.study.leetcode;
 
+import java.util.Arrays;
+
 /**
  * 给定一个整数数组 A，我们只能用以下方法修改该数组：我们选择某个个索引 i 并将 A[i] 替换为 -A[i]，然后总共重复这个过程 K 次。（我们可以多次选择同一个索引 i。）
  * <p>
@@ -41,42 +43,17 @@ public class Solution_1005 {
             return 0;
         }
 
-        quickSort(A, 0, A.length - 1);
+        for (int i = 1; i <= K; i++) {
+            Arrays.sort(A);
+            A[0] = (-A[0]);
+        }
 
         int total = 0;
 
-        return total;
-    }
+        for (int i = 0; i < A.length; i++) {
+            total = total + A[i];
+        }
 
-    private void quickSort(int[] num, int left, int right) {
-        //如果left等于right，即数组只有一个元素，直接返回
-        if (left >= right) {
-            return;
-        }
-        //设置最左边的元素为基准值
-        int key = num[left];
-        //数组中比key小的放在左边，比key大的放在右边，key值下标为i
-        int i = left;
-        int j = right;
-        while (i < j) {
-            //j向左移，直到遇到比key小的值
-            while (num[j] >= key && i < j) {
-                j--;
-            }
-            //i向右移，直到遇到比key大的值
-            while (num[i] <= key && i < j) {
-                i++;
-            }
-            //i和j指向的元素交换
-            if (i < j) {
-                int temp = num[i];
-                num[i] = num[j];
-                num[j] = temp;
-            }
-        }
-        num[left] = num[i];
-        num[i] = key;
-        quickSort(num, left, i - 1);
-        quickSort(num, i + 1, right);
+        return total;
     }
 }

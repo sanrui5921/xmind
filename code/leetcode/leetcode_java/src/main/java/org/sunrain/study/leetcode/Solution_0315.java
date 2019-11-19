@@ -26,13 +26,48 @@ import java.util.List;
 public class Solution_0315 {
 
     public List<Integer> countSmaller(int[] nums) {
-        if (nums == null || nums.length == 0) {
-            return new ArrayList<>();
-        }
-
-        List<Integer> results = new ArrayList<>(nums.length);
-
-        return results;
+        return null;
+//        if (nums == null || nums.length == 0) {
+//            return new ArrayList<>();
+//        }
+//
+//        int length = nums.length;
+//
+//        List<Integer> results = new ArrayList<>(length);
+//
+//        for (int i = 0; i < length; i++) {
+//            results.add(i, 0);
+//        }
+//
+//        int[][] matrix = new int[length][2];
+//
+//        for (int i = 0; i < length; i++) {
+//            matrix[i][0] = nums[i];
+//            matrix[i][1] = i;
+//        }
+//
+//        Arrays.sort(matrix, new Comparator<int[]>() {
+//            public int compare(int[] a, int[] b) {
+//                if (a[0] == b[0]) {
+//                    return a[1] - b[1];
+//                }
+//                return a[0] - b[0];
+//            }
+//        });
+//
+//        int moved = 0;
+//        for (int i = 0; i < length; i++) {
+//            if (matrix[i][1] > i) {
+//                moved++;
+//                results.set(matrix[i][1], 0);
+//            } else if (matrix[i][1] == i) {
+//                results.set(matrix[i][1], i - matrix[i][1] + moved);
+//            } else {
+//                results.set(matrix[i][1], i - matrix[i][1]);
+//            }
+//        }
+//
+//        return results;
     }
 
     //超出时间限制

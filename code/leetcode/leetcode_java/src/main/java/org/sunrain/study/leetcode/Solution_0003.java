@@ -28,7 +28,13 @@ package org.sunrain.study.leetcode;
  */
 
 public class Solution_0003 {
+
     public int lengthOfLongestSubstring(String s) {
-        return 1;
+
+        if (s == null || s.equals("")) {
+            return 0;
+        }
+
+        return 0;
     }
 }
