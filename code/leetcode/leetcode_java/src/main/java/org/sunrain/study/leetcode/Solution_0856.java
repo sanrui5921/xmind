@@ -42,7 +42,7 @@ public class Solution_0856 {
         Stack<Integer> stack = new Stack();
 
         int result = 0;
-        
+
 
         return result;
     }
