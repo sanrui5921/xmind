@@ -20,6 +20,6 @@ public class Solution_0650Test {
 
     @Test
     public void test2() {
-        Assert.assertEquals(3, solution.minSteps(12));
+        Assert.assertEquals(7, solution.minSteps(12));
     }
 }

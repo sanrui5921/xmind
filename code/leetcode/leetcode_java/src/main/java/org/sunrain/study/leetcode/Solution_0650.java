@@ -1,7 +1,6 @@
 package org.sunrain.study.leetcode;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 /**
  * 最初在一个记事本上只有一个字符 'A'。你每次可以对这个记事本进行两种操作：
@@ -31,25 +30,56 @@ public class Solution_0650 {
 
     public int minSteps(int n) {
 
-        Set<Integer> set = getNumbers(n);
+        Map<Integer, Integer> results = new HashMap<>();
 
-        for (int inte : set) {
-            System.out.print(inte + " ");
+        results.put(1, 0);
+
+        int result = getTimes(results, n);
+
+        for (Integer integer : results.keySet()) {
+            System.out.println(integer + " " + results.get(integer));
         }
-        System.out.println();
 
+        return result;
+    }
 
-        return 0;
+    public int getTimes(Map<Integer, Integer> results, int m) {
+        if (results.get(m) != null) {
+            return results.get(m);
+        }
+
+        Set<Integer> set = getNumbers(m);
+
+        if (set.size() == 0) {
+            results.put(m, m);
+            return m;
+        }
+
+        List<Integer> list = new ArrayList<>();
+
+        for (Integer i : set) {
+            list.add(getTimes(results, i) + m / i);
+        }
+
+        int min = list.get(0);
+        for (Integer integer : list) {
+            if (integer < min) {
+                min = integer;
+            }
+        }
+
+        results.put(m, min);
+
+        return min;
     }
 
     public Set<Integer> getNumbers(int n) {
-        Set<Integer> set = new HashSet<>();
+        Set<Integer> set = new TreeSet<>();
         for (int i = 2; i <= n / 2; i++) {
             int result = n / i;
             if (result * i == n) {
                 set.add(i);
                 set.add(result);
-                set.addAll(getNumbers(i));
             }
         }
         return set;
