@@ -38,42 +38,40 @@ package org.sunrain.study.leetcode;
  */
 public class Solution_1171 {
     public ListNode removeZeroSumSublists(ListNode head) {
-        return null;
-//        ListNode newHead = new ListNode(0);
-//        ListNode father = newHead;
-//        newHead.next = head;
-//        ListNode current = father.next;
-//        for (; current != null; ) {
-//            if (current.val == 0) {
-//
-//            }
-//            int value = current.val;
-//            ListNode next = current.next;
-//            for (; next != null; next = next.next) {
-//                if (value + next.val == 0) {
-//                    value = 0;
-//                    break;
-//                }
-//                value = value + next.val;
-//            }
-//
-//            if (value == 0) {
-//                father.next = next.next;
-//            }
-//            father = father.next;
-//            if (father == null) {
-//                break;
-//            }
-//            current = father.next;
-//            if (current == null) {
-//                break;
-//            }
-//        }
-//
-//        if (current != null && current.val == 0) {
-//            father.next = current.next;
-//        }
-//
-//        return newHead.next;
+
+        ListNode newHead = new ListNode(0);
+        newHead.next = head;
+        ListNode parent = newHead;
+
+        for (ListNode current = parent.next; current != null; ) {
+
+            if (current.val == 0) {
+                parent.next = current.next;
+                if (parent == null) {
+                    break;
+                } else {
+                    current = parent.next;
+                }
+            } else {
+                int value = current.val;
+                ListNode next = current.next;
+                for (; next != null; next = next.next) {
+                    value = next.val + value;
+                    if (value == 0) {
+                        break;
+                    }
+                }
+
+                if (value == 0) {
+                    parent.next = next.next;
+                    current = parent != null ? parent.next : null;
+                } else {
+                    parent = parent.next;
+                    current = parent != null ? parent.next : null;
+                }
+            }
+        }
+
+        return newHead.next;
     }
 }
