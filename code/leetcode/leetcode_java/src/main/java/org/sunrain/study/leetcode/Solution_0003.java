@@ -34,7 +34,13 @@ public class Solution_0003 {
         if (s == null || s.equals("")) {
             return 0;
         }
+        int length = s.length();
+        for (int i = 0; i < length; i++) {
 
-        return 0;
+        }
+
+        int max = 1;
+
+        return max;
     }
 }

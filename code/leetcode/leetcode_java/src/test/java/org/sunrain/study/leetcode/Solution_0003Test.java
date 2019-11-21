@@ -42,4 +42,10 @@ public class Solution_0003Test {
         String str = " ";
         Assert.assertEquals(1, solution.lengthOfLongestSubstring(str));
     }
+
+    @Test
+    public void test6() {
+        String str = "au";
+        Assert.assertEquals(2, solution.lengthOfLongestSubstring(str));
+    }
 }
