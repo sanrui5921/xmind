@@ -1,5 +1,7 @@
 package org.sunrain.study.leetcode;
 
+import java.util.Stack;
+
 /**
  * 给定两个没有重复元素的数组 nums1 和 nums2 ，其中nums1 是 nums2 的子集。找到 nums1 中每个元素在 nums2 中的下一个比其大的值。
  * <p>
@@ -33,6 +35,13 @@ public class Solution_0496 {
     public int[] nextGreaterElement(int[] nums1, int[] nums2) {
         if (nums1 == null || nums2 == null || nums1.length == 0 || nums2.length == 0) {
             return null;
+        }
+
+        Stack<Integer> stack = new Stack();
+
+        for (int i = nums2.length - 1; i >= 0; i--) {
+
+
         }
 
         return null;
