@@ -1,4 +1,4 @@
-package org.sunrain.study.design_pattern.observer.newspaper;
+package org.sunrain.study.design_pattern.observer.newspaper.sunrain;
 
 import java.util.ArrayList;
 import java.util.List;

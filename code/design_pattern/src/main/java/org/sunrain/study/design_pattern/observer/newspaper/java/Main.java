@@ -1,4 +1,5 @@
-package org.sunrain.study.design_pattern.observer.newspaper;
+package org.sunrain.study.design_pattern.observer.newspaper.java;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -6,9 +7,9 @@ public class Main {
         Reader reader2 = new Reader("李四");
         Reader reader3 = new Reader("王五");
         Newspaper newspaper = new Newspaper();
-        newspaper.attach(reader1);
-        newspaper.attach(reader2);
-        newspaper.attach(reader3);
+        newspaper.addObserver(reader1);
+        newspaper.addObserver(reader2);
+        newspaper.addObserver(reader3);
         newspaper.setContent("测试一下");
     }
 }

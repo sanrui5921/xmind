@@ -1,4 +1,4 @@
-package org.sunrain.study.design_pattern.observer.newspaper;
+package org.sunrain.study.design_pattern.observer.newspaper.sunrain;
 
 public class Newspaper extends Subject {
 
