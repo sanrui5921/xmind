@@ -10,3 +10,6 @@ code/sunrain_java_utils/.mvn
 code/java_thread/.mvn
 code/netty_demo/.mvn
 code/okhttp3-demo/.mvn
+code/okhttp3-example/.mvn
+code/springboot/springboot_demo_01/.mvn
+code/springcloud/springcloud_demo_eureka_server_01/.mvn
