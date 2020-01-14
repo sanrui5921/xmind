@@ -29,6 +29,7 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
     public void channelReadComplete(ChannelHandlerContext ctx) {
         ctx.flush();
         System.out.println("通道读取完成....");
+        ctx.close();
     }
 
     @Override
